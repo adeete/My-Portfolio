@@ -84,16 +84,7 @@ export class ExperienceSectionComponent implements OnInit {
         'python',
         'flask',
       ],
-    },
-    {
-      companyName: 'vi-mech equipments',
-      designation: 'front-end intern',
-      from: 'Mar, 2017',
-      to: 'Apr, 2017',
-      responsibilites: ['Building web applications for official website'],
-      accomplishments: [],
-      technologies: ['java', 'html', 'css', 'bootstrap', 'javascript'],
-    },
+    }
   ];
   current = 0;
   currentState = 'initial';

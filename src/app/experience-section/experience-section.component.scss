@@ -20,10 +20,10 @@ $chartColorsLength: length($chartColors);
   align-items: center;
   flex-wrap: wrap;
   scroll-snap-align: start;
-  background: url(../../assets/inline_image_preview.jpg) no-repeat,#59c3c3;
+  background: #1d2a58;
   background-position: center;
   background-size: cover;
-  background-blend-mode: luminosity;
+  background-blend-mode: color-dodge;
 
   .btn {
     background: transparent;
@@ -64,7 +64,7 @@ $chartColorsLength: length($chartColors);
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
       grid-row: 2;
-      background: linear-gradient(45deg, $redPink 22%, #FF6B6B 70%);
+      background: linear-gradient(45deg, #7AE7C7, #3F88C5);
       box-sizing: border-box;
       padding: 0.5rem;
       display: flex;
@@ -72,10 +72,12 @@ $chartColorsLength: length($chartColors);
       justify-content: space-between;;
       font-family: $headingFont;
       color: white;
-      box-shadow: 0 -2px 10px rgba(28, 37, 65, 0.7);
+      // box-shadow: 0 -2px 10px rgba(47, 63, 110, 0.7);
+      box-shadow: 4px -7px 9px 1px rgba(157, 141, 241, 0.2);
 
       h3 {
         text-align: start;
+        color: #C62E65;
       }
       h5 {
         text-align: end;
@@ -85,27 +87,48 @@ $chartColorsLength: length($chartColors);
 
     .work-experience {
       grid-row: 3;
-      background: rgba(255, 255, 255 ,0.8);
+      background: url(../../assets/experience-background.jpg) no-repeat, #1C2541;
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: top;
       position: relative;
-      box-shadow: 0 0 10px 2px rgba(28, 37, 65, 0.7);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), -2px -2px 5px rgba(0, 0, 0, 0.5);
       display: flex;
       overflow-y: auto;
       flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: center;
       padding: 0.2rem;
       font-family: $infoFont;
       color: #1c2541;
       * {
         margin-left: 1rem;
-        line-height: 1.2rem;
+        // line-height: 1.2rem;
         letter-spacing: 0.05rem;
       }
       h3 {
+        font-size: 1.4rem;
         margin-top: 0.8rem;
-        color: $redPink;
+        color: #B8CDF8;
+        text-shadow: 3px 4px 2px rgba(0, 0, 0, 0.4);
       }
       li {
-        font-size: 0.75rem;
+        
+      margin: 0.5rem 0;
+      color: #6FFFE9;
+      font-family: $infoFont;
+      font-size: 0.7rem;
+      letter-spacing: $defaultLetterSpacing;
+      }
+
+      .btn {
+        position: absolute;
+        right: 10px;
+        display: none;
+        bottom: 10px;
+
+        &.scroll-right {
+          margin-right: 1rem;
+        }
       }
     }
 
@@ -113,8 +136,8 @@ $chartColorsLength: length($chartColors);
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
       grid-row: 4;
-      background: #FF6B6B;
-      box-shadow: 0 5px 10px rgba(28, 37, 65, 0.7);
+      background: linear-gradient(45deg, #7AE7C7, #3F88C5);
+      box-shadow: 4px 7px 9px 1px rgba(157, 141, 241, 0.2);
       display: flex;
       align-items: center;
       align-content: center;
@@ -149,7 +172,7 @@ $chartColorsLength: length($chartColors);
     .timeline {
       grid-row: 1;
       position: relative;
-      border-top: 0.2rem solid $redPink;
+      border-top: 0.2rem solid #7AE7C7;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -159,18 +182,17 @@ $chartColorsLength: length($chartColors);
       h5 {
         position: absolute;
         color: white;
-        text-shadow: 3px 4px 2px rgba(0, 0, 0, 0.4);
         font-family: $headingFont;
         width: 5rem;
         text-align: end;
-        transform: translateY(-160%);
-      }
-
-      h5.to {
-        left: 0px;
+        transform: translateY(-180%);
       }
 
       h5.from {
+        left: -15px;
+      }
+
+      h5.to {
         right: 0px;
       }
       &::before {
@@ -180,8 +202,8 @@ $chartColorsLength: length($chartColors);
         width: 1rem;
         height: 1rem;
         border-radius: 2rem;
-        border: 0.2rem solid $redPink;
-        background: #191717;
+        border: 0.2rem solid #7AE7C7;
+        background: #1d2a58;
         left: 5px;
         transform: translateY(-60%);
       }
@@ -192,8 +214,8 @@ $chartColorsLength: length($chartColors);
         width: 1rem;
         height: 1rem;
         border-radius: 2rem;
-        border: 0.2rem solid $redPink;
-        background: #191717;
+        border: 0.2rem solid #7AE7C7;
+        background: #1d2a58;
         right: 5px;
         transform: translateY(-60%);
       }
@@ -202,7 +224,7 @@ $chartColorsLength: length($chartColors);
 
 }
 
-@media (max-width: 780px ){
+@media (max-width: 780px ) and (min-width : 421px){
   .container {
     .btn {
       position: absolute;
@@ -228,8 +250,17 @@ $chartColorsLength: length($chartColors);
 @media (max-width: 420px ){
   .container {
     .btn {
-      position: absolute;
+      display: none;
+    }
+    align-items: flex-start;
+    .experience-section {
       top: 10%;
+      width: 90%;
+      .work-experience {
+        .btn {
+          display: initial;
+        }
+      }
     }
   }
 }

@@ -27,4 +27,8 @@
   .navbar {
     display: none;
   }
+  .mainContainer {
+    scroll-snap-type: none;
+    scroll-snap-stop: initial;
+  }
 }
