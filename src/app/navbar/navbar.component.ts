@@ -21,11 +21,6 @@ export class NavbarComponent implements OnInit {
     },
     {
       isCurrent: false,
-      category: 'education',
-      value: 'education',
-    },
-    {
-      isCurrent: false,
       category: 'workexperience',
       value: 'work experience',
     }
