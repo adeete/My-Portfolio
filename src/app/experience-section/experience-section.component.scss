@@ -1,0 +1,276 @@
+@import "../shared/variables";
+
+$chartColors: #068dcb, #2a855e, #ff6a00, #1C2541, #a52d3d;
+@for $i from 1 through length($chartColors) {
+  $chartColors: append($chartColors, darken(nth($chartColors, $i), 10));
+}
+$chartColorsLength: length($chartColors);
+
+:host ::ng-deep {
+  
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  // box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  scroll-snap-align: start;
+  background: url(../../assets/inline_image_preview.jpg) no-repeat,#59c3c3;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: luminosity;
+
+  .btn {
+    background: transparent;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    border-bottom: 0.5rem solid rgba(255, 255, 255, 0.5);
+    border-left: 0.5rem solid rgba(255, 255, 255, 0.5);
+    outline: none;
+
+    &:hover {
+      border-bottom: 0.5rem solid #fff;
+      border-left: 0.5rem solid #fff;
+    }
+  }
+  .scroll-right {
+    margin-right: 0.2rem;
+    transform: rotate(45deg);
+  }
+  .scroll-left {
+    margin-left: 0.6rem;
+    transform: rotate(225deg);
+  }
+  .section-animate {
+    animation: bounceFromRight 0.5s ease-in-out forwards;
+  }
+  .experience-section {
+    border-radius: 15px;
+    display: grid;
+    // grid-template-columns: 99% auto;
+    grid-template-rows: 5% 15% 55% auto;
+    // column-gap: 0.6rem;
+    row-gap: 0.3rem;
+    width: 40%;
+    min-height: 70%;
+    max-height: 85%;
+    z-index: 5;
+    position: relative;
+    top: 2rem;
+    opacity: 1;
+
+    .company-info {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      // grid-column: 1 ;
+      grid-row: 2;
+      background: linear-gradient(45deg, $redPink 22%, #FF6B6B 70%);
+      box-sizing: border-box;
+      padding: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;;
+      font-family: $headingFont;
+      color: white;
+      box-shadow: 0 -2px 10px rgba(28, 37, 65, 0.7);
+
+      h3 {
+        text-align: start;
+      }
+      h5 {
+        text-align: end;
+        font-family: $headingFont;
+      }
+    }
+
+    .work-experience {
+      grid-row: 3;
+      background: rgba(255, 255, 255 ,0.8);
+      position: relative;
+      box-shadow: 0 0 10px 2px rgba(28, 37, 65, 0.7);
+      display: flex;
+      overflow-y: auto;
+      flex-direction: column;
+      justify-content: space-evenly;
+      // align-items: center;
+      padding: 0.2rem;
+      font-family: $infoFont;
+      color: #1c2541;
+      * {
+        margin-left: 1rem;
+        line-height: 1.2rem;
+        letter-spacing: 0.05rem;
+      }
+      h3 {
+        margin-top: 0.8rem;
+        color: $redPink;
+      }
+      li {
+        font-size: 0.75rem;
+      }
+    }
+
+    .technology-used {
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      grid-row: 4;
+      background: #FF6B6B;
+      box-shadow: 0 5px 10px rgba(28, 37, 65, 0.7);
+      display: flex;
+      align-items: center;
+      align-content: center;
+      // height: 20%;
+      flex-wrap: wrap;
+      font-family: $headingFont;
+      // font-style: italic;
+      // font-size: 0.9rem;
+      // justify-content: center;
+      color: white;
+      app-badge:first-child {
+        margin-left: 0.5rem;
+      }
+      app-badge {
+        margin: 0.2rem 0.1rem;
+        @for $i from 1 through $chartColorsLength {
+          &:nth-of-type(#{$chartColorsLength}n+#{$i})::ng-deep .badge-container  {
+            background-color: lighten($color: nth($chartColors, $i), $amount: 20%) ;
+            .badge-content {
+              background-color: nth($chartColors, $i);
+            }
+          }
+        }
+        h5 {
+          font-size: 0.7rem;
+        }
+        &::ng-deep .badge-container{
+          padding: 0;
+          .badge-content {
+            box-shadow: 0 0 2px 1px rgba(0,0,0, 0.1);
+          }
+        }
+      }
+    }
+
+    .timeline {
+      grid-row: 1;
+      // grid-column: 2;
+      position: relative;
+      border-top: 0.2rem solid $redPink;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      h5 {
+        position: absolute;
+        color: white;
+        text-shadow: 3px 4px 2px rgba(0, 0, 0, 0.4);
+        font-family: $headingFont;
+        width: 5rem;
+        text-align: end;
+        transform: translateY(-160%);
+      }
+
+      h5.to {
+        left: 0px;
+      }
+
+      h5.from {
+        right: 0px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        box-sizing: border-box;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 2rem;
+        border: 0.2rem solid $redPink;
+        background: #191717;
+        // top: 5px;
+        left: 5px;
+        transform: translateY(-60%);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        box-sizing: border-box;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 2rem;
+        border: 0.2rem solid $redPink;
+        background: #191717;
+        // bottom: 5px;
+        right: 5px;
+        transform: translateY(-60%);
+      }
+    }
+  }
+
+  .skewed-background {
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+    background: url(../../assets/ladder.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 10%, 0 100%, 100% 100%);
+    mix-blend-mode: soft-light;
+  }
+}
+
+@media (max-width: 780px ){
+  .container {
+    .btn {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      display: flex;
+      &.scroll-right {
+        margin-left: 2rem;
+        transform: translateX(-50%) rotate(225deg);
+      }
+      
+      &.scroll-left {
+        margin-left: -2rem;
+        transform: translateX(-50%) rotate(45deg);
+      }
+    }
+    .experience-section {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 420px ){
+  .container {
+    .btn {
+      position: absolute;
+      top: 10%;
+    }
+  }
+}
+
+@keyframes bounceFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(20%) rotateY(45deg);
+    transform-origin: right;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+  }
+}

@@ -1,0 +1,25 @@
+@import "../shared/variables";
+
+.badge-container {
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    padding: 0.3rem;
+    background: #ffca69;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 10px rgba(0,0,0, 0.3);
+  .badge-content {
+    height: 1.2rem;
+    min-width: 3rem;
+    padding: 0.3rem;
+    border-radius: 15px;
+    background: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 4px 1px rgba(0,0,0, 0.5);
+  }
+}
+

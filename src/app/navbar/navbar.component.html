@@ -1,0 +1,5 @@
+<div class="navbar-container">
+    <ul class="navbar" (click)="setCurrent($event)">
+            <li *ngFor="let item of items" href="#skills" class="children" [class.current]="item.isCurrent" [attr.data-category]="item.category"> {{item.value | titlecase}}</li>
+    </ul>
+</div>

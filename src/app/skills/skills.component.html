@@ -1,0 +1,15 @@
+<div class="container" id="skills">
+    <div class="card" *ngFor="let oSkill of aSkillsInfo; let i = index">
+        <div class="card-content">
+        <div class="card-content-holder">
+            <h1><span *ngIf="i < 9">0</span>{{i+1}}</h1>
+            <h2>{{oSkill.skillType}}</h2>
+            <div class="skills-info">
+                <app-badge *ngFor="let skill of oSkill.skills">
+                    <h5>{{skill}}</h5>
+                </app-badge>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>

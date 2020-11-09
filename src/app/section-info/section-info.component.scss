@@ -1,0 +1,190 @@
+@import "../shared/_variables.scss";
+
+.background-overlay {
+  position: absolute;
+  left: 10%;
+  height: 100vh;
+  width: 25%;
+  z-index: 8;
+  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.2);
+
+  // box-shadow: -8px 0 7px 3px #e01a4f, 8px 0 7px 3px #5F1A37;
+  background: linear-gradient(to right, rgba(28, 37, 65, 1) 11%, rgba(11, 19, 43, 1) 100%);
+  // background-blend-mode: multiply;
+  // display: flex;
+  // justify-content: center;
+
+  #introduction-section {
+    color: $ticklePink;
+    // mix-blend-mode: overlay;
+    z-index: 10;
+    position: absolute;
+    font-size: 2rem;
+    min-width: 18rem;
+    top: 20%;
+    left: 60%;
+    opacity: 1;
+    h1 {
+      font-family: $headingFont;
+      padding-right: 1rem;
+      span {
+        color: #b1e5f2;
+        font-family: "Sacramento", cursive;
+        text-decoration: underline;
+        text-underline-position: under;
+      }
+    }
+
+    p {
+      overflow: hidden;
+      margin-top: 0.3rem;
+      font-family: $infoFont;
+      white-space: nowrap;
+      letter-spacing: 0.1rem;
+      border-right: .15em solid #b1e5f2;
+      font-size: 1rem;
+      font-weight: 400;
+      color: aliceblue;
+      animation: typing 5s steps(39, end), blink-caret 0.85s step-end infinite;
+    }
+  }
+
+  #shadow-text-section {
+    height: 100vh;
+    width: 60%;
+    position: relative;
+    left: 1rem;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+      font-size: 9rem;
+      color: rgb(111 151 233 / 10%) ;
+      letter-spacing: 3px;
+      position: absolute;
+      font-family: $infoFont;
+      transform: rotate(-90deg);
+    }
+  }
+  #contact-info-section {
+    display: none;
+  }
+  #about-section {
+    text-align: left;
+    text-overflow: wrap;
+    padding: 1rem;
+    width: 70%;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: showIntro 2s ease-in-out forwards;
+    * {
+      letter-spacing: $defaultLetterSpacing;
+    }
+    h3 {
+      color: white;
+      font-family: $headingFont;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      color: #6FFFE9;
+      font-family: $infoFont;
+      font-size: 0.7rem;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  #about-section {
+    padding: 0.5rem !important;
+  }
+
+  #introduction-section {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .background-overlay {
+    all: initial;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    #shadow-text-section {
+      display: none;
+    }
+
+    #introduction-section {
+      all: initial;
+      color: $ticklePink;
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+      display: flex;
+      min-width: 15rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    #contact-info-section {
+      all: initial;
+      width: 100%;
+      height: 4rem;
+      position: relative;
+      margin: 0.3rem;
+      display: block;
+    }
+
+    #about-section {
+      all: initial;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0.5rem;
+
+      h3 {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes showIntro {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showAbout {
+  0% {
+    top: 100%;
+  }
+
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  30% { border-color: #b1e5f2; }
+}

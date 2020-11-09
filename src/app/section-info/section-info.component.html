@@ -1,0 +1,19 @@
+<div class="background-overlay">
+    <div id="shadow-text-section"><p>Portfolio</p></div>
+    <div id="introduction-section">
+        <h1>Hi !!!</h1>
+        <h1>I'm <span>{{oIntro.name}}.</span></h1>
+        <p> <span *ngFor="let occupation of oIntro.occupations; let i = index">{{occupation}} <span *ngIf="i < oIntro.occupations.length - 1">| </span> </span></p>
+    </div>
+
+
+    <div id="about-section">
+        <h3>About</h3>
+        <p>{{oIntro.about}}</p>
+    </div>
+
+    
+    <div id="contact-info-section">
+        <app-contact-info></app-contact-info>
+    </div>
+</div>

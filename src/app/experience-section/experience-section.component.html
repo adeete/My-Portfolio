@@ -1,0 +1,42 @@
+<div class="container">
+  <button class="btn scroll-right" (click)="next()"><span></span></button>
+  <div class="experience-section">
+    <div class="company-info">
+      <h3>
+        {{ aExperiences[current].companyName | titlecase }}
+      </h3>
+      <h5>{{aExperiences[current].designation | titlecase}}</h5>
+    </div>
+    <div class="work-experience">
+      <h3>Roles and Responsibilities</h3>
+      <ul>
+        <li *ngFor="let responsibility of aExperiences[current].responsibilites">
+          {{responsibility}}
+        </li>
+      </ul>
+
+      <h3 *ngIf="aExperiences[current].accomplishments.length > 0">Accomplishments</h3>
+      <ul>
+        <li *ngFor="let accomplishment of aExperiences[current].accomplishments">
+          {{accomplishment | titlecase}}
+        </li>
+      </ul>
+    </div>
+    <div class="technology-used">
+      <app-badge
+        *ngFor="
+          let skill of aExperiences[current].technologies
+        "
+      >
+        <h5>{{ skill }}</h5>
+      </app-badge>
+    </div>
+    <div class="timeline">
+      <h5 class="to">Aug, 2020</h5>
+      <h5 class="from">Aug, 2018</h5>
+    </div>
+  </div>
+  <button class="btn scroll-left" (click)="prev()"><span></span></button>
+
+  <!-- <div class="skewed-background"></div> -->
+</div>

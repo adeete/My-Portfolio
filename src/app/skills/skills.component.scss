@@ -1,0 +1,129 @@
+@import "../shared/variables";
+
+$chartColors: #56c7fa, #f76540, #ffcb05, #62cd9f, #b67baa;
+@for $i from 1 through length($chartColors) {
+  $chartColors: append($chartColors, darken(nth($chartColors, $i), 25));
+}
+$chartColorsLength: length($chartColors);
+
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #1C2541; //#360568;//#392759;//#424874;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  scroll-snap-align: start;
+  
+  .card {
+    position: relative;
+    width: 320px;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1C2541;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.5),
+      inset -5px -5px 5px rgba(57, 75, 131, 0.5),
+      5px 5px 5px rgba(0, 0, 0, 0.5), -5px -5px 5px rgba(57, 75, 131, 0.5);
+    border-radius: 15px;
+    margin: 30px;
+    .card-content {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      box-shadow: 0 10px 8px  rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      background-image: url(../../assets/dribbble_shot_rocket_illustration.jpg);
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: cover;
+      transition: 0.5s ease-out;
+
+      .card-content-holder {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 15px;
+        background-color: rgba(64, 55, 110, 0.75);
+        background-blend-mode: soft-light;
+        h1 {
+          font-weight: 600;
+          color: rgb(208 148 254 / 30%);
+          text-align: end;
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          font-family: $infoFont;
+          letter-spacing: 3px;
+          font-size: 8rem;
+        }
+
+        h2 {
+          position: absolute;
+          top: 20%;
+          color: white;
+          font-size: 2.2rem;
+          font-family: $infoFont;
+          margin-left: 0.9rem;
+        }
+
+        .skills-info {
+          padding: 0.1rem;
+          display: flex;
+          top: 2rem;
+          top: 40%;
+          // transform: translateY(-50%);
+          position: absolute;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-content: flex-end;
+          align-items: center;
+          app-badge {
+            margin: 0.5rem 0.2rem;
+            @for $i from 1 through $chartColorsLength {
+              &:nth-of-type(#{$chartColorsLength}n+#{$i})::ng-deep .badge-container  {
+                background-color: lighten($color: nth($chartColors, $i), $amount: 20%) ;
+                .badge-content {
+                  background-color: nth($chartColors, $i);
+                }
+              }
+            }
+            h5 {
+              color: white;
+              font-family: $headingFont;
+              letter-spacing: 0.1rem;
+            }
+          }
+        }
+      }
+
+    }
+
+    &:hover .card-content {
+      transform: translateY(-50px);
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+      background-position: right;
+      .card-content-holder {
+        background: linear-gradient(45deg, $ticklePink, $cornFlowerBlue);
+      }
+    }
+
+    &:hover
+      .card-content-holder
+      .skills-info
+      app-badge::ng-deep .badge-container
+      .badge-content {
+      box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.5);
+    }
+  }
+}
