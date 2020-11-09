@@ -65,6 +65,7 @@
       .children {
         margin: 0;
         border: 2px solid white;
+        min-width: 5rem;
 
         &:hover {
           box-shadow: none;
