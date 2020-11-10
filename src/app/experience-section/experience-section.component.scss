@@ -28,8 +28,8 @@ $chartColorsLength: length($chartColors);
   .btn {
     background: transparent;
     border: none;
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-bottom: 0.5rem solid rgba(255, 255, 255, 0.5);
     border-left: 0.5rem solid rgba(255, 255, 255, 0.5);
     outline: none;
@@ -124,7 +124,7 @@ $chartColorsLength: length($chartColors);
         position: absolute;
         right: 10px;
         display: none;
-        bottom: 10px;
+        top: 10px;
 
         &.scroll-right {
           margin-right: 1rem;

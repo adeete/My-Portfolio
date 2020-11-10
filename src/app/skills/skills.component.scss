@@ -109,21 +109,28 @@ $chartColorsLength: length($chartColors);
 
     }
 
-    &:hover .card-content {
-      transform: translateY(-50px);
-      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-      background-position: right;
-      .card-content-holder {
-        background: linear-gradient(45deg, $ticklePink, $cornFlowerBlue);
-      }
-    }
+  }
+}
 
-    &:hover
-      .card-content-holder
-      .skills-info
-      app-badge::ng-deep .badge-container
-      .badge-content {
-      box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.5);
+@media (min-width : 421px) {
+  .container {
+    .card {
+      &:hover .card-content {
+        transform: translateY(-50px);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        background-position: right;
+        .card-content-holder {
+          background: linear-gradient(45deg, $ticklePink, $cornFlowerBlue);
+        }
+      }
+  
+      &:hover
+        .card-content-holder
+        .skills-info
+        app-badge::ng-deep .badge-container
+        .badge-content {
+        box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.5);
+      }
     }
   }
 }
