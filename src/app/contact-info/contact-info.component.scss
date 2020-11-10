@@ -53,6 +53,7 @@ $iconBoxShadow: 0 0 7px 7px rgba(255 , 255, 255, 0.4);
 
 
       &:hover {
+        border-radius: 1rem;
         border: 2px solid white;
         box-shadow: 0 0 4px 3px rgba(255 , 255, 255, 0.4);
         span.icon {
