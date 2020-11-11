@@ -1,5 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+package-lock.json
+.editorconfig
 # compiled output
 /dist
 /tmp
@@ -44,7 +46,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-package-lock.json
-
-.editorconfig
