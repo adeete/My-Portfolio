@@ -38,10 +38,10 @@ export class NavbarComponent implements OnInit {
       clickedItem = [...oTarget.parentElement.children].indexOf(event.target);
 
     if (category) {
+      this.items[this.prev].isCurrent = false;
+      this.items[clickedItem].isCurrent = true;
+      this.prev = clickedItem;
       this.navService.scrollTo(category);
     }
-    this.items[this.prev].isCurrent = false;
-    this.items[clickedItem].isCurrent = true;
-    this.prev = clickedItem;
   }
 }

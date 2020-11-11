@@ -32,8 +32,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {}
 
   scrollTo(id) {
-    console.log('scrolling');
-
     this[id].nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 }
