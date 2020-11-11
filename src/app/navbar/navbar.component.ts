@@ -1,14 +1,13 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { NavServiceService } from '../shared/services/nav-service.service';
 
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-   items = [
+  items = [
     {
       isCurrent: false,
       category: 'about',
@@ -23,7 +22,7 @@ export class NavbarComponent implements OnInit {
       isCurrent: false,
       category: 'workexperience',
       value: 'work experience',
-    }
+    },
   ];
   prev: number;
   constructor(private navService: NavServiceService) {}
@@ -35,12 +34,14 @@ export class NavbarComponent implements OnInit {
 
   setCurrent(event: any) {
     const oTarget = event.target,
-          category = oTarget.dataset.category,
-          clickedItem = [...oTarget.parentElement.children].indexOf(event.target);
-    this.items[this.prev].isCurrent  = false;
-    this.items[clickedItem].isCurrent  = true;
-    this.prev = clickedItem;
+      category = oTarget.dataset.category,
+      clickedItem = [...oTarget.parentElement.children].indexOf(event.target);
 
-    this.navService.scrollTo(category);
+    if (category) {
+      this.navService.scrollTo(category);
+    }
+    this.items[this.prev].isCurrent = false;
+    this.items[clickedItem].isCurrent = true;
+    this.prev = clickedItem;
   }
 }
