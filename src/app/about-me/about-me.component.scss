@@ -23,12 +23,17 @@
     height: 55%;
     transform: translateY(-50%);
     animation: all ease-in-out;
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: contain;
-      background-position: center;
+    #Files {
+      animation: fileMoving  2s infinite linear;
+      transform-origin: bottom;
+      transform-box: fill-box;
     }
+    // img {
+    //   height: 100%;
+    //   width: 100%;
+    //   object-fit: contain;
+    //   background-position: center;
+    // }
   }
   .info-section {
     width: 100vw;
@@ -47,10 +52,10 @@
   #img-section {
     height: 69%;
     width: 35%;
-    top: initial !important;
-    transform: initial !important;
-    bottom: 0;
-    right: 1rem !important;
+    // top: initial !important;
+    // transform: initial !important;
+    // // bottom: 0;
+    // // right: 1rem !important;
     // img {
     //   object-fit: contain !important;
     // }
@@ -95,3 +100,11 @@
   }
 }
 
+@keyframes fileMoving {
+  0% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(-3%);
+  }
+}
