@@ -14,7 +14,7 @@ Run `npm start` to view the application in prod mode on local server  `http://lo
 
 ## Hosted on heroko
 
-Navigate to <a href="https://adeete.herokuapp.com/" target="_blank"></a> to view the portfolio in action.
+Navigate to <a href="https://adeete.herokuapp.com/" target="_blank">Portfolio</a> to view the portfolio in action.
 
 ## Info about the portofolio
 
