@@ -21,6 +21,19 @@
       width: 100%;
       height: 100%;
     }
+
+    &::-webkit-scrollbar {
+      width: 0.6rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #2271ab;
+      border-radius: 16px;
+    }
   }
   
   @media (max-width: 420px) {
