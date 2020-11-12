@@ -3,9 +3,9 @@
 $iconBoxShadow: 0 0 7px 7px rgba(255 , 255, 255, 0.4);
 
 .contactInfo {
-    width: 75%;
+    width: 100%;
     height: 100%;
-    position: absolute;
+    position: relative;
     right: 1rem;
     display: flex;
     align-items: center;
@@ -25,8 +25,8 @@ $iconBoxShadow: 0 0 7px 7px rgba(255 , 255, 255, 0.4);
       justify-content: space-between;
       transition: all 0.2s ease-in-out;
       span.icon {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 3vmax;
+        height: 3vmax;
         border-radius: 50%;
         border: 4px solid white;
         box-shadow: $iconBoxShadow;
@@ -112,5 +112,16 @@ $iconBoxShadow: 0 0 7px 7px rgba(255 , 255, 255, 0.4);
     }
     100% {
       box-shadow: $iconBoxShadow;
+    }
+  }
+
+  @media (min-width: 1300px) , (min-height: 900px){
+    .contactInfo {
+      .btn {
+        span.icon {
+          width: 4.5vmax;
+          height: 4.5vmax;
+        }
+      }
     }
   }

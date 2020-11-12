@@ -19,12 +19,14 @@
     position: absolute;
     right: 2rem;
     top: 50%;
+    width: 45%;
+    height: 55%;
     transform: translateY(-50%);
     animation: all ease-in-out;
     img {
       height: 100%;
       width: 100%;
-      object-fit: cover;
+      object-fit: contain;
       background-position: center;
     }
   }
@@ -49,9 +51,9 @@
     transform: initial !important;
     bottom: 0;
     right: 1rem !important;
-    img {
-      object-fit: contain !important;
-    }
+    // img {
+    //   object-fit: contain !important;
+    // }
   }
 }
 

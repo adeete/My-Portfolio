@@ -28,10 +28,10 @@ $chartColorsLength: length($chartColors);
   .btn {
     background: transparent;
     border: none;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-bottom: 0.5rem solid rgba(255, 255, 255, 0.5);
-    border-left: 0.5rem solid rgba(255, 255, 255, 0.5);
+    width: 2vmax;
+    height: 2vmax;
+    border-bottom: 0.4vmax solid rgba(255, 255, 255, 0.5);
+    border-left: 0.4vmax solid rgba(255, 255, 255, 0.5);
     outline: none;
 
     &:hover {
@@ -252,9 +252,66 @@ $chartColorsLength: length($chartColors);
     .experience-section {
       top: 10%;
       width: 90%;
+      .company-info {
+        h3 {
+          font-size: 1rem;
+        }
+      }
       .work-experience {
+          h3 {
+            font-size: 1rem;
+          }
+          li {
+            font-size: 0.7rem;
+          }
         .btn {
           display: initial;
+        }
+      }
+
+      .technology-used {
+        app-badge {
+          h5 {
+            font-size: 0.55rem !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1380px) {
+  .experience-section {
+    .company-info {
+      h3 {
+        font-size: 1.4vmax;
+      }
+      h5 {
+        font-size: 1.1vmax;
+      }
+    }
+    .work-experience {
+      h3 {
+        font-size: 1.4vmax !important;
+      }
+      li {
+        font-size: 0.9vmax !important;
+      }
+
+    }
+
+    
+    .timeline {
+      h5 {
+        width: 5vmax !important;
+        font-size: 0.9vmax !important;
+      }
+    }
+
+    .technology-used {
+      app-badge {
+        h5 {
+          font-size: 1vmax !important;
         }
       }
     }

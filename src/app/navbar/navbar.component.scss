@@ -21,7 +21,7 @@
     .children {
       padding: 0.2rem 0.2rem;
       width: auto;
-      height: 25px;
+      min-height: 25px;
       margin: 2px 0.5rem;
       border: none;
       color: rgba(255, 255, 255, 1);
@@ -100,5 +100,29 @@
         }
       }
     }
+  }
+}
+
+@media (min-width : 1400px) , (min-height: 900px) {
+  .navbar-container {
+      .navbar {
+        .children {
+          font-size: 1.8rem;
+          margin: 1rem;
+          padding: 0.5rem;
+        }
+      }
+  }
+}
+
+@media (min-width : 2560px) and (min-height: 900px) {
+  .navbar-container {
+      .navbar {
+        .children {
+          font-size: 2.5rem;
+          margin: 1rem;
+          padding: 0.5rem;
+        }
+      }
   }
 }

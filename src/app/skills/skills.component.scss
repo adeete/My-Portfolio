@@ -133,3 +133,32 @@ $chartColorsLength: length($chartColors);
     }
   }
 }
+
+
+@media (min-width: 1380px) {
+  .container {
+    .card {
+      width: 25vmax;
+      height: 35vmax;
+      .card-content {
+      .card-content-holder {
+        h1 {
+          font-size: 10vmax;
+        }
+
+        h2{
+          font-size: 3vmax;
+        }
+        .skills-info {
+          app-badge {
+            margin: 0.5vmax 0.4vmax;
+            h5 {
+              font-size: 1.5vmax;
+            }
+          }
+        }
+      }
+      }
+    }
+  }
+}
