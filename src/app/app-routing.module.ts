@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-const routes: Routes = [];
+import { NotFoundComponent } from './not-found/not-found.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
+const routes: Routes = [
+  {path: '', component: PortfolioComponent},
+  {path: '**', component: NotFoundComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled'})],

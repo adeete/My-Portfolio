@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BadgeComponent } from "../badge/badge.component";
-import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-skills',
@@ -22,10 +21,9 @@ export class SkillsComponent implements OnInit {
       "skills" : ["hyperledger fabric", "docker", "git", "rest", "oop"]
     }
   ];
-  constructor(private viewPortScroller: ViewportScroller) { }
+  constructor() { }
 
   ngOnInit(): void {
-    console.log(this.viewPortScroller.getScrollPosition());
   }
 
 }

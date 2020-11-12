@@ -5,14 +5,9 @@
   width: 100%;
   scroll-snap-align: start;
   background: $cornFlowerBlue;
-  // linear-gradient(
-  //   to right,
-  //   $ticklePink,
-  //   $cornFlowerBlue
-  // ); // rgb(189, 173, 173);
   position: relative;
   .background {
-    background: url(../../assets/dribbble_shot_rocket_illustration.jpg) no-repeat;
+    background: url(../../assets/img/dribbble_shot_rocket_illustration.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     opacity: 0.8;
@@ -60,19 +55,6 @@
   }
 }
 
-// @media (max-width: 905px) {
-//   #img-section {
-//     height: 52%;
-//     width: 60%;
-//     top: initial !important;
-//     transform: initial !important;
-//     bottom: 0;
-//     right: 1rem !important;
-//     img {
-//       object-fit: contain !important;
-//     }
-//   }
-// }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
   #img-section {
@@ -80,7 +62,6 @@
     width: 60%;
   }
 }
-// E01A4F
 
 @media (max-width: 420px) {
   .container {
@@ -112,5 +93,3 @@
   }
 }
 
-@media (max-width: 975px) {
-}

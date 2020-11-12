@@ -30,6 +30,11 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.items[0].isCurrent = true;
     this.prev = 0;
+    this.navService.scrollData.subscribe((idx: number) => {
+      this.items[this.prev].isCurrent = false;
+      this.items[idx].isCurrent = true;
+      this.prev = idx;
+    });
   }
 
   setCurrent(event: any) {

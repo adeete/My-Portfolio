@@ -7,16 +7,10 @@
   width: 25%;
   z-index: 8;
   box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.2);
-
-  // box-shadow: -8px 0 7px 3px #e01a4f, 8px 0 7px 3px #5F1A37;
   background: linear-gradient(to right, rgba(28, 37, 65, 1) 11%, rgba(11, 19, 43, 1) 100%);
-  // background-blend-mode: multiply;
-  // display: flex;
-  // justify-content: center;
 
   #introduction-section {
     color: $ticklePink;
-    // mix-blend-mode: overlay;
     z-index: 10;
     position: absolute;
     font-size: 2rem;
@@ -183,7 +177,6 @@
   to { width: 100% }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
   from, to { border-color: transparent }
   30% { border-color: #b1e5f2; }

@@ -11,6 +11,8 @@ import { ContactInfoComponent } from './contact-info/contact-info.component';
 import { BadgeComponent } from './badge/badge.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ExperienceSectionComponent } from './experience-section/experience-section.component';
+import { ComponentVisibleDirective } from './shared/directives/component-visible.directive';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ExperienceSectionComponent } from './experience-section/experience-sect
     ContactInfoComponent,
     BadgeComponent,
     NotFoundComponent,
-    ExperienceSectionComponent
+    ExperienceSectionComponent,
+    ComponentVisibleDirective,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
