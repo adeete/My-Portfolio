@@ -53,20 +53,6 @@ $iconBoxShadow: 0 0 7px 7px rgba(255 , 255, 255, 0.4);
       }
 
 
-      &:hover {
-        border-radius: 1rem;
-        border: 2px solid white;
-        box-shadow: 0 0 4px 3px rgba(255 , 255, 255, 0.4);
-        span.icon {
-          box-shadow: initial;
-          animation: none;
-          width: 3vmax;
-          height: 3vmax;
-        }
-        .iconText {
-          display: initial;
-        }
-      }
     }
   }
 
@@ -87,23 +73,7 @@ $iconBoxShadow: 0 0 7px 7px rgba(255 , 255, 255, 0.4);
           &:first-child {
             margin: 0;
           }
-          &:hover {
-            border: none;
-            box-shadow: none;
-            span.icon {
-              width: 2.5rem;
-              height: 2.5rem;
-              box-shadow: $iconBoxShadow;
-            }
-            .iconText {
-              display: none;
-            }
-          }
 
-          &:active {
-            background: transparent;
-
-          }
         }
     }
   }
@@ -125,12 +95,21 @@ $iconBoxShadow: 0 0 7px 7px rgba(255 , 255, 255, 0.4);
           width: 4.5vmax;
           height: 4.5vmax;
         }
-        &:hover {
-          span.icon {
-            width: 4.5vmax;
-            height: 4.5vmax;
-          }
-        }
       }
     }
+  }
+
+  @media(hover:hover) and (pointer: fine) {
+    .contactInfo .btn:hover {
+        border-radius: 1rem;
+        border: 2px solid white;
+        box-shadow: 0 0 4px 3px rgba(255 , 255, 255, 0.4);
+        span.icon {
+          box-shadow: initial;
+          animation: none;
+        }
+        .iconText {
+          display: initial;
+        }
+      }
   }

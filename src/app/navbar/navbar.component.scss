@@ -32,14 +32,6 @@
       text-align: center;
       font-family: $headingFont;
 
-      &:hover {
-        cursor: pointer;
-        transform: scaleX(1.1);
-        border: 2px solid white;
-        border-radius: 0.5rem;
-        box-shadow: 0 0 4px 3px rgba(255, 255, 255, 0.4);
-        color: white;
-      }
 
       &:first-child {
         margin-left: auto;
@@ -66,12 +58,12 @@
         min-width: 5rem;
         border-radius: 0.5rem;
 
-        &:hover {
-          box-shadow: none;
-          transform: none;
-          background: white;
-          color: $ticklePink;
-        }
+        // &:hover {
+        //   box-shadow: none;
+        //   transform: none;
+        //   background: none;
+        //   color: $ticklePink;
+        // }
 
         &:first-child {
           margin-left: 0;
@@ -125,4 +117,15 @@
         }
       }
   }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navbar-container .navbar .children:hover { 
+      cursor: pointer;
+      transform: scaleX(1.1);
+      border: 2px solid white;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 4px 3px rgba(255, 255, 255, 0.4);
+      color: white;
+   }
 }
