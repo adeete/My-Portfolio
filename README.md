@@ -1,15 +1,20 @@
-# MyPortfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+# MyPortfolio :page_facing_up:
+This is an Angular10 project with motive to showcase portfolio. 
 
 ## Development server
 
 Run `npm install` in order to download all the required dependencies.
-Run `ng serve` for a dev server or `npm start` for prod server. Navigate to `http://localhost:4200/`.
+Navigate to `http://localhost:4200/`.
+
+## Prod server
+
+Run `ng build` to build the application in prod mode.
+Run `npm start` to view the application in prod mode on local server  `http://localhost:4200/`.
 
 ## Hosted on heroko
 
-Navigate to `https://adeete.herokuapp.com/` to view the portfolio in action.
+Navigate to <a href="https://adeete.herokuapp.com/" target="_blank"></a> to view the portfolio in action.
 
 ## Info about the portofolio
 
