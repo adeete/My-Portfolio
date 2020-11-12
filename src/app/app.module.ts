@@ -13,6 +13,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ExperienceSectionComponent } from './experience-section/experience-section.component';
 import { ComponentVisibleDirective } from './shared/directives/component-visible.directive';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { BackgroundSvgComponent } from './background-svg/background-svg.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     NotFoundComponent,
     ExperienceSectionComponent,
     ComponentVisibleDirective,
-    PortfolioComponent
+    PortfolioComponent,
+    BackgroundSvgComponent
   ],
   imports: [
     BrowserModule,

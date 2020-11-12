@@ -1,0 +1,30 @@
+#wheel1, #wheel2 {
+    animation: rotateWheel 4s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#Files {
+    animation: fileMoving  2s infinite linear;
+    transform-origin: bottom;
+    transform-box: fill-box;
+}
+
+@keyframes rotateWheel {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes fileMoving {
+    0% {
+        transform: translateY(-5%);
+    }
+    100% {
+        transform: translateY(3%);
+    }
+}

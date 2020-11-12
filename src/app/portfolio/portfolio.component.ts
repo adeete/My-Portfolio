@@ -2,9 +2,11 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { NavServiceService } from '../shared/services/nav-service.service';
 
 @Component({
@@ -12,14 +14,15 @@ import { NavServiceService } from '../shared/services/nav-service.service';
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit, OnDestroy {
   @ViewChild('skills', { read: ElementRef }) skills: ElementRef;
   @ViewChild('about', { read: ElementRef }) about: ElementRef;
   @ViewChild('workexperience', { read: ElementRef }) workexperience: ElementRef;
+  private navSub: Subscription;
   constructor(private navService: NavServiceService) {}
 
   ngOnInit() {
-    this.navService.navData.subscribe((id) => {
+    this.navSub =  this.navService.navData.subscribe((id) => {
       if (id) {
         this.scrollTo(id);
       }
@@ -32,5 +35,9 @@ export class PortfolioComponent implements OnInit {
 
   onContainerScroll(event) {
     console.log(event);
+  }
+
+  ngOnDestroy() {
+    this.navSub.unsubscribe();
   }
 }

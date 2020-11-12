@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackgroundSvgComponent } from '../background-svg/background-svg.component';
 
 @Component({
   selector: 'app-about-me',

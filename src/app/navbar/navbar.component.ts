@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { NavServiceService } from '../shared/services/nav-service.service';
 
 @Component({
@@ -6,7 +7,7 @@ import { NavServiceService } from '../shared/services/nav-service.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   items = [
     {
       isCurrent: false,
@@ -25,12 +26,13 @@ export class NavbarComponent implements OnInit {
     },
   ];
   prev: number;
+  private scrollSub: Subscription;
   constructor(private navService: NavServiceService) {}
 
   ngOnInit(): void {
     this.items[0].isCurrent = true;
     this.prev = 0;
-    this.navService.scrollData.subscribe((idx: number) => {
+    this.scrollSub = this.navService.scrollData.subscribe((idx: number) => {
       this.items[this.prev].isCurrent = false;
       this.items[idx].isCurrent = true;
       this.prev = idx;
@@ -47,6 +49,12 @@ export class NavbarComponent implements OnInit {
       this.items[clickedItem].isCurrent = true;
       this.prev = clickedItem;
       this.navService.scrollTo(category);
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.scrollSub) {
+      this.scrollSub.unsubscribe();
     }
   }
 }
