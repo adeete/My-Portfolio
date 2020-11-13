@@ -13,7 +13,7 @@ import { NavServiceService } from '../services/nav-service.service';
 })
 export class ComponentVisibleDirective
   implements OnDestroy, OnInit {
-  @Input() threshold = 0.7;
+  @Input() threshold = 0.6;
   @Input() idx;
   private observer: IntersectionObserver | undefined;
   element: any;

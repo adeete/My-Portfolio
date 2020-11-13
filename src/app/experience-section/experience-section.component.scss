@@ -59,7 +59,7 @@ $chartColorsLength: length($chartColors);
     transform: rotate(45deg);
   }
   .scroll-left {
-    margin-left: 0.6rem;
+    margin-left: 0.2rem;
     transform: rotate(225deg);
   }
   .experience-section {
@@ -100,7 +100,7 @@ $chartColorsLength: length($chartColors);
 
     .work-experience {
       grid-row: 3;
-      background: rgba(183, 171, 219, 0.7) ; //url(../../assets/img/experience-background.jpg) no-repeat,
+      background: rgba(183, 171, 219, 0.7) ;
       background-blend-mode: multiply;
       background-size: cover;
       background-position: top;
