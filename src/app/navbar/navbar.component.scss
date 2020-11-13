@@ -103,12 +103,12 @@
   }
 }
 
-@media (min-width: 1400px) and (min-height: 900px) {
+@media (min-width: 1400px) , (min-height: 900px) {
   .navbar-container {
     .navbar {
       .children {
-        font-size: 1.8rem;
-        margin: 1rem;
+        font-size: 1.4vmax;
+        margin: 0.5vmax;
         padding: 0.5rem;
       }
     }

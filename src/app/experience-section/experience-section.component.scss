@@ -45,8 +45,8 @@ $chartColorsLength: length($chartColors);
     border: none;
     width: 2vmax;
     height: 2vmax;
-    border-bottom: 0.4vmax solid #b7abdb;
-    border-left: 0.4vmax solid #b7abdb;
+    border-bottom: 0.4vmax solid #927cd4;
+    border-left: 0.4vmax solid #927cd4;
     outline: none;
 
     &:hover {
@@ -67,7 +67,7 @@ $chartColorsLength: length($chartColors);
     display: grid;
     grid-template-rows: 5% 15% 55% auto;
     row-gap: 0.3rem;
-    width: 40%;
+    width: 67%;
     min-height: 70%;
     max-height: 85%;
     z-index: 5;
@@ -123,7 +123,7 @@ $chartColorsLength: length($chartColors);
         font-family: $infoFont;
       }
       li {
-        margin: 0.5rem 0;
+        margin-top: 0.5vmax;
         color: #1c2541;
         font-family: "Lato";
         font-size: 0.8rem;
@@ -234,34 +234,24 @@ $chartColorsLength: length($chartColors);
   }
 }
 
-@media (max-width: 780px) and (min-width: 421px) {
+@media (max-width: 780px) {
   .container {
     .btn {
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      display: flex;
-      &.scroll-right {
-        margin-left: 2rem;
-        transform: translateX(-50%) rotate(225deg);
-      }
-
-      &.scroll-left {
-        margin-left: -2rem;
-        transform: translateX(-50%) rotate(45deg);
-      }
+      display: none;
     }
     .experience-section {
       width: 90%;
+      .work-experience {
+        .btn {
+          display: initial;
+        }
+      }
     }
   }
 }
 
 @media (max-width: 420px) {
   .container {
-    .btn {
-      display: none;
-    }
     align-items: flex-start;
     .experience-section {
       top: 10%;
@@ -277,9 +267,6 @@ $chartColorsLength: length($chartColors);
         }
         li {
           font-size: 0.7rem;
-        }
-        .btn {
-          display: initial;
         }
       }
 
@@ -337,6 +324,9 @@ $chartColorsLength: length($chartColors);
     }
     .img-section {
       display: initial;
+    }
+    .experience-section {
+      width: 40%;
     }
   }
 }
