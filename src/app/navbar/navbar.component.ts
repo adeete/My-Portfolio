@@ -1,4 +1,12 @@
-import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NavServiceService } from '../shared/services/nav-service.service';
 
@@ -27,6 +35,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ];
   prev: number;
   private scrollSub: Subscription;
+  @ViewChildren('children') private children: QueryList<ElementRef>;
   constructor(private navService: NavServiceService) {}
 
   ngOnInit(): void {
@@ -36,9 +45,26 @@ export class NavbarComponent implements OnInit, OnDestroy {
       this.items[this.prev].isCurrent = false;
       this.items[idx].isCurrent = true;
       this.prev = idx;
+      if (this.children) {
+        if (idx == 2) {
+          this._addDarkTheme();
+        } else {
+          this._removeDarkTheme();
+        }
+      }
     });
   }
 
+  private _addDarkTheme() {
+    this.children.forEach((el: ElementRef) => {
+      el.nativeElement.classList.add('childrenDark');
+    });
+  }
+  private _removeDarkTheme() {
+    this.children.forEach((el: ElementRef) => {
+      el.nativeElement.classList.remove('childrenDark');
+    });
+  }
   setCurrent(event: any) {
     const oTarget = event.target,
       category = oTarget.dataset.category,

@@ -32,15 +32,22 @@
       text-align: center;
       font-family: $headingFont;
 
-
       &:first-child {
         margin-left: auto;
       }
     }
 
+    .childrenDark {
+      color: #1c2541;
+    }
+
     .current {
       border-bottom: 2px solid white;
-      box-shadow: 0px 15px 20px -12px #1c2541;
+      box-shadow: 0px 8px 20px -12px #1c2541;
+
+      &.workexperience {
+        border-bottom: 2px solid #415595;
+      }
     }
   }
 }
@@ -58,21 +65,21 @@
         min-width: 5rem;
         border-radius: 0.5rem;
 
-        // &:hover {
-        //   box-shadow: none;
-        //   transform: none;
-        //   background: none;
-        //   color: $ticklePink;
-        // }
-
         &:first-child {
           margin-left: 0;
         }
+      }
+      .childrenDark {
+        color: white;
       }
 
       .current {
         background: white;
         color: $ticklePink;
+
+        &.workexperience {
+          border-bottom: none;
+        }
       }
     }
   }
@@ -95,37 +102,48 @@
   }
 }
 
-@media (min-width : 1400px) and (min-height: 900px) {
+@media (min-width: 1400px) and (min-height: 900px) {
   .navbar-container {
-      .navbar {
-        .children {
-          font-size: 1.8rem;
-          margin: 1rem;
-          padding: 0.5rem;
-        }
+    .navbar {
+      .children {
+        font-size: 1.8rem;
+        margin: 1rem;
+        padding: 0.5rem;
       }
+    }
   }
 }
 
-@media (min-width : 2560px) and (min-height: 900px) {
+@media (min-width: 2560px) and (min-height: 900px) {
   .navbar-container {
-      .navbar {
-        .children {
-          font-size: 2.5rem;
-          margin: 1rem;
-          padding: 0.5rem;
-        }
+    .navbar {
+      .children {
+        font-size: 2.5rem;
+        margin: 1rem;
+        padding: 0.5rem;
       }
+    }
   }
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .navbar-container .navbar .children:hover { 
+  .navbar-container .navbar {
+    .children:hover {
       cursor: pointer;
       transform: scaleX(1.1);
       border: 2px solid white;
       border-radius: 0.5rem;
       box-shadow: 0 0 4px 3px rgba(255, 255, 255, 0.4);
       color: white;
-   }
+    }
+
+    .childrenDark:hover {
+      cursor: pointer;
+      transform: scaleX(1.1);
+      border: 2px solid #415595;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 4px 3px rgba(255, 255, 255, 0.4);
+      color: #415595;
+    }
+  }
 }
