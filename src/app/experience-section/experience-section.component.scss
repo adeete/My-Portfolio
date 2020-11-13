@@ -1,6 +1,5 @@
 @import "../shared/variables";
 
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 $chartColors: #56c7fa, #f76540, #ffcb05, #62cd9f, #b67baa;
 @for $i from 1 through length($chartColors) {
   $chartColors: append($chartColors, darken(nth($chartColors, $i), 10));
@@ -126,7 +125,7 @@ $chartColorsLength: length($chartColors);
       li {
         margin: 0.5rem 0;
         color: #1c2541;
-        font-family: "Lato", sans-serif;
+        font-family: "Lato";
         font-size: 0.8rem;
       }
 
