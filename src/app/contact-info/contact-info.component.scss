@@ -108,6 +108,8 @@ $iconBoxShadow: 0 0 7px 7px rgba(255 , 255, 255, 0.4);
         span.icon {
           box-shadow: initial;
           animation: none;
+          width: 2.5vmax;
+          height: 2.5vmax;
         }
         .iconText {
           display: initial;

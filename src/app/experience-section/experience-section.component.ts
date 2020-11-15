@@ -41,7 +41,7 @@ export class ExperienceSectionComponent implements OnInit {
         'Develop Web Applications for Blockchain R&D Pocs, CEAT and Excide.',
         'Server side development for Blockchain R&D Pocs.',
         'Tech-talk and Innovation event presenter for Blockchain R&D.',
-        'Integrate Applications with External APIs',
+        'Integrate Applications with External APIs.',
       ],
       accomplishments: [
         'Won Silver award for my performance as a fresher.',
@@ -70,8 +70,8 @@ export class ExperienceSectionComponent implements OnInit {
       from: 'Jan, 2018',
       to: 'June, 2018',
       responsibilites: [
-        'Develop Desktop and Web Application for ChatBot POC',
-        'Revamping the Chatbot for managing purchase requests and orders',
+        'Develop Desktop and Web Application for ChatBot POC.',
+        'Revamp the Chatbot for managing purchase requests and orders.',
       ],
       accomplishments: [],
       technologies: [
