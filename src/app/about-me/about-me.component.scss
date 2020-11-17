@@ -4,7 +4,7 @@
   height: 100%;
   width: 100%;
   scroll-snap-align: start;
-  background: $cornFlowerBlue;
+  background: map-get($colors , mainAccent );
   position: relative;
   .background {
     background: url(../../assets/img/dribbble_shot_rocket_illustration.jpg) no-repeat;

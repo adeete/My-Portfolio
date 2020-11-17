@@ -1,10 +1,5 @@
 @import "../shared/variables";
 
-$chartColors: #56c7fa, #f76540, #ffcb05, #62cd9f, #b67baa;
-@for $i from 1 through length($chartColors) {
-  $chartColors: append($chartColors, darken(nth($chartColors, $i), 25));
-}
-$chartColorsLength: length($chartColors);
 
 .container {
   width: 100%;

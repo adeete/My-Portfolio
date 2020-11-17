@@ -1,29 +1,32 @@
 @import "../shared/variables";
 
-$chartColors: #56c7fa, #f76540, #ffcb05, #62cd9f, #b67baa;
-@for $i from 1 through length($chartColors) {
-  $chartColors: append($chartColors, darken(nth($chartColors, $i), 10));
+$localColors: (
+  mainAccent: #415595,
+  navigationColor: #927cd4,
+  bg: #B9D6F2,
+  secondaryAccent: rgb(183, 171, 219),
+  opaqueSecondaryAccent: rgba(183, 171, 219, 0.7),
+);
+
+@mixin timeLine {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 2rem;
+  border: 0.2rem solid map-get($localColors, mainAccent);
+  background: map-get($localColors, bg);
 }
-$chartColorsLength: length($chartColors);
 
 * {
   box-sizing: border-box;
 }
 .container {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  @include fullContainer(relative);
+  @include flexContainer(center, center, initial, wrap, row);
   scroll-snap-align: start;
-  background: #B9D6F2;
-  background-position: center;
-  background-size: cover;
-  background-blend-mode: color-dodge;
+  background: map-get($localColors, bg);
   .wave {
     position: absolute;
     bottom: 0;
@@ -45,13 +48,13 @@ $chartColorsLength: length($chartColors);
     border: none;
     width: 2vmax;
     height: 2vmax;
-    border-bottom: 0.4vmax solid #927cd4;
-    border-left: 0.4vmax solid #927cd4;
+    border-bottom: 0.4vmax solid map-get($localColors, navigationColor);
+    border-left: 0.4vmax solid map-get($localColors, navigationColor);
     outline: none;
 
     &:hover {
-      border-bottom: 0.4vmax solid #415595;
-      border-left: 0.4vmax solid #415595;
+      border-bottom: 0.4vmax solid map-get($localColors, mainAccent);
+      border-left: 0.4vmax solid map-get($localColors, mainAccent);
     }
   }
   .scroll-right {
@@ -79,19 +82,16 @@ $chartColorsLength: length($chartColors);
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
       grid-row: 2;
-      background: #1c2541;
-      box-sizing: border-box;
+      background: map-get($colors, themeColor);
       padding: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: white;
+      @include flexContainer(space-between, center, initial, initial, row);
+      color: map-get($colors, info);
       font-family: $headingFont;
-      box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.3), 2px -2px 5px rgba(0, 0, 0, 0.3);
+      box-shadow: -2px -2px 5px blackWithOpacity(0.3), 2px -2px 5px blackWithOpacity(0.3);
 
       h3 {
         text-align: start;
-        color: #b7abdb;
+        color: map-get($localColors, secondaryAccent);
       }
       h5 {
         text-align: end;
@@ -100,18 +100,13 @@ $chartColorsLength: length($chartColors);
 
     .work-experience {
       grid-row: 3;
-      background: rgba(183, 171, 219, 0.7) ;
-      background-blend-mode: multiply;
-      background-size: cover;
-      background-position: top;
+      background: map-get($localColors, opaqueSecondaryAccent);
       position: relative;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-      display: flex;
+      box-shadow: 0px 0px 5px blackWithOpacity(0.5);
+      @include flexContainer(center, initial, initial, initial, column);
       overflow-y: auto;
-      flex-direction: column;
-      justify-content: center;
       padding: 0.2rem;
-      color: #1c2541;
+      color: map-get($colors, themeColor);
       * {
         margin-left: 1rem;
         letter-spacing: 0.05rem;
@@ -119,14 +114,23 @@ $chartColorsLength: length($chartColors);
       h3 {
         font-size: 1.4rem;
         margin-top: 0.8rem;
-        color: #415595;
+        color: map-get($localColors, mainAccent);
         font-family: $infoFont;
       }
       li {
         margin-top: 0.5vmax;
-        color: #1c2541;
+        color: map-get($colors, themeColor);
         font-family: "Lato";
         font-size: 0.8rem;
+      }
+
+      .pageNo {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-family: "Lato";
+        font-size: 0.8rem;
+        color: map-get($localColors, mainAccent);
       }
 
       .btn {
@@ -134,7 +138,6 @@ $chartColorsLength: length($chartColors);
         right: 10px;
         display: none;
         top: 10px;
-
         &.scroll-right {
           margin-right: 1rem;
         }
@@ -145,28 +148,19 @@ $chartColorsLength: length($chartColors);
       border-bottom-left-radius: 15px;
       border-bottom-right-radius: 15px;
       grid-row: 4;
-      background: #1c2541;
-      box-shadow: -2px 3px 5px rgba(0, 0, 0, 0.5), 2px 3px 5px rgba(0, 0, 0, 0.5);
-      display: flex;
-      align-items: center;
-      align-content: center;
-      flex-wrap: wrap;
+      background: map-get($colors, themeColor);
+      box-shadow: -2px 3px 5px blackWithOpacity(0.5), 2px 3px 5px blackWithOpacity(0.5);
+      @include flexContainer(initial, center, center, wrap, row);
       font-family: $headingFont;
-      color: white;
+      color: map-get($colors, info);
       padding-left: 0.5rem;
       app-badge {
         margin: 0.2rem 0.1rem;
         @for $i from 1 through $chartColorsLength {
           &:nth-of-type(#{$chartColorsLength}n + #{$i})::ng-deep
-            .badge-container {
-            background-color: lighten(
-              $color: nth($chartColors, $i),
-              $amount: 20%
-            );
             .badge-content {
               background-color: nth($chartColors, $i);
             }
-          }
         }
         h5 {
           font-size: 0.7rem;
@@ -174,7 +168,7 @@ $chartColorsLength: length($chartColors);
         &::ng-deep .badge-container {
           padding: 0;
           .badge-content {
-            box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 2px 1px blackWithOpacity(0.1);
           }
         }
       }
@@ -183,16 +177,11 @@ $chartColorsLength: length($chartColors);
     .timeline {
       grid-row: 1;
       position: relative;
-      border-top: 0.2rem solid #415595;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-end;
-
+      border-top: 0.2rem solid map-get($localColors, mainAccent);
+      @include flexContainer(space-between, flex-end, initial, initial, column);
       h5 {
         position: absolute;
-        color: #415595;
+        color: map-get($localColors, mainAccent);
         font-family: $headingFont;
         width: 5rem;
         text-align: end;
@@ -207,26 +196,12 @@ $chartColorsLength: length($chartColors);
         right: 0px;
       }
       &::before {
-        content: "";
-        position: absolute;
-        box-sizing: border-box;
-        width: 1rem;
-        height: 1rem;
-        border-radius: 2rem;
-        border: 0.2rem solid #415595;
-        background: #B9D6F2;
+        @include timeLine();
         left: 5px;
         transform: translateY(-60%);
       }
       &::after {
-        content: "";
-        position: absolute;
-        box-sizing: border-box;
-        width: 1rem;
-        height: 1rem;
-        border-radius: 2rem;
-        border: 0.2rem solid #415595;
-        background: #B9D6F2;
+        @include timeLine();
         right: 5px;
         transform: translateY(-60%);
       }
