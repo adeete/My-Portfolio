@@ -18,3 +18,17 @@
     url('../../fonts/Lato-Regular.woff') format('woff');
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../fonts/Roboto-Regular.woff2') format('woff2'),
+    url('../../fonts/Roboto-Regular.woff') format('woff');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Julius Sans One';
+  src: url('../../fonts/JuliusSansOne-Regular.woff2') format('woff2'),
+    url('../../fonts/JuliusSansOne-Regular.woff') format('woff');
+  font-style: normal;
+}
