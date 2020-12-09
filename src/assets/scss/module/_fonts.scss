@@ -3,7 +3,7 @@
     src: url('../../fonts/Sacramento-Regular.woff2') format('woff2'),
       url('../../fonts/Sacramento-Regular.woff') format('woff');
     font-style: normal;
-    font-display: optional;
+    font-display: swap;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     src: url('../../fonts/Montserrat-Light.woff2') format('woff2'),
       url('../../fonts/Montserrat-Light.woff') format('woff');
     font-style: normal;
-    font-display: optional;
+    font-display: swap;
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   src: url('../../fonts/Lato-Regular.woff2') format('woff2'),
     url('../../fonts/Lato-Regular.woff') format('woff');
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   src: url('../../fonts/Roboto-Regular.woff2') format('woff2'),
     url('../../fonts/Roboto-Regular.woff') format('woff');
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
@@ -35,5 +35,5 @@
   src: url('../../fonts/JuliusSansOne-Regular.woff2') format('woff2'),
     url('../../fonts/JuliusSansOne-Regular.woff') format('woff');
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
