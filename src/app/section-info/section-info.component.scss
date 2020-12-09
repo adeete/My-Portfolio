@@ -30,6 +30,7 @@ $localColor: (
     opacity: 1;
     h1 {
       font-family: $headingFont;
+      text-transform: uppercase;
       padding-right: 1rem;
       span {
         color: map-get($localColor, nameColor);
@@ -90,6 +91,7 @@ $localColor: (
     h3 {
       color: map-get($colors, info);
       font-family: $headingFont;
+      text-transform: uppercase;
     }
 
     p {
