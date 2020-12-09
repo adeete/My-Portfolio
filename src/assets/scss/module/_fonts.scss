@@ -1,39 +1,39 @@
 @font-face {
-    font-family: 'Sacramento';
+    font-family: 'Sacramento', 'Times New Roman', Times, serif;
     src: url('../../fonts/Sacramento-Regular.woff2') format('woff2'),
       url('../../fonts/Sacramento-Regular.woff') format('woff');
     font-style: normal;
-    font-display: swap;
+    font-display: optional;
 }
 
 @font-face {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', 'Times New Roman', Times, serif;
     src: url('../../fonts/Montserrat-Light.woff2') format('woff2'),
       url('../../fonts/Montserrat-Light.woff') format('woff');
     font-style: normal;
-    font-display: swap;
+    font-display: optional;
 }
 
 @font-face {
-  font-family: 'Lato';
+  font-family: 'Lato', 'Times New Roman', Times, serif;
   src: url('../../fonts/Lato-Regular.woff2') format('woff2'),
     url('../../fonts/Lato-Regular.woff') format('woff');
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'Times New Roman', Times, serif;
   src: url('../../fonts/Roboto-Regular.woff2') format('woff2'),
     url('../../fonts/Roboto-Regular.woff') format('woff');
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
-  font-family: 'Julius Sans One';
+  font-family: 'Julius Sans One', 'Times New Roman', Times, serif;
   src: url('../../fonts/JuliusSansOne-Regular.woff2') format('woff2'),
     url('../../fonts/JuliusSansOne-Regular.woff') format('woff');
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
