@@ -33,7 +33,7 @@ $localColor: (
       padding-right: 1rem;
       span {
         color: map-get($localColor, nameColor);
-        font-family: "Sacramento", cursive;
+        font-family: $emphFont;
         text-decoration: underline;
         text-underline-position: under;
       }
