@@ -87,6 +87,7 @@ $localColors: (
       @include flexContainer(space-between, center, initial, initial, row);
       color: map-get($colors, info);
       font-family: $headingFont;
+      text-transform: uppercase;
       box-shadow: -2px -2px 5px blackWithOpacity(0.3), 2px -2px 5px blackWithOpacity(0.3);
 
       h3 {
@@ -152,6 +153,7 @@ $localColors: (
       box-shadow: -2px 3px 5px blackWithOpacity(0.5), 2px 3px 5px blackWithOpacity(0.5);
       @include flexContainer(initial, center, center, wrap, row);
       font-family: $headingFont;
+      text-transform: uppercase;
       color: map-get($colors, info);
       padding-left: 0.5rem;
       app-badge {
@@ -183,6 +185,7 @@ $localColors: (
         position: absolute;
         color: map-get($localColors, mainAccent);
         font-family: $headingFont;
+        text-transform: uppercase;
         width: 5rem;
         text-align: end;
         transform: translateY(-180%);
