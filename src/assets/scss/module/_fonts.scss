@@ -3,7 +3,7 @@
     src: url('../../fonts/Sacramento-Regular.woff2') format('woff2'),
       url('../../fonts/Sacramento-Regular.woff') format('woff');
     font-style: normal;
-    font-display: optional;
+    font-display: swap;
 }
 
 @font-face {
@@ -35,5 +35,5 @@
   src: url('../../fonts/JuliusSansOne-Regular.woff2') format('woff2'),
     url('../../fonts/JuliusSansOne-Regular.woff') format('woff');
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }

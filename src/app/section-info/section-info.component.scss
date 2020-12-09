@@ -30,14 +30,13 @@ $localColor: (
     opacity: 1;
     h1 {
       font-family: $headingFont;
-      text-transform: uppercase;
       padding-right: 1rem;
+      white-space: nowrap;
       span {
         color: map-get($localColor, nameColor);
         font-family: $emphFont;
         text-decoration: underline;
         text-underline-position: under;
-        text-transform: none;
       }
     }
 
@@ -92,7 +91,6 @@ $localColor: (
     h3 {
       color: map-get($colors, info);
       font-family: $headingFont;
-      text-transform: uppercase;
     }
 
     p {
