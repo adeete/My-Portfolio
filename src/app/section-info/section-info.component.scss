@@ -163,44 +163,6 @@ $localColor: (
   }
 }
 
-@keyframes showIntro {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes showAbout {
-  0% {
-    top: 100%;
-  }
-
-  100% {
-    top: 50%;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  30% {
-    border-color: map-get($localColor, nameColor);
-  }
-}
 
 @media (min-width: 1500px), (min-height: 1585px) {
   .background-overlay {
@@ -215,5 +177,26 @@ $localColor: (
         font-size: 1.1vmax;
       }
     }
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 978px) {
+  .background-overlay {
+    left: 0;
+    width: 35%;
+    #shadow-text-section {
+      p{
+        font-size: 18vmax;
+      }
+    }
+  }
+}
+
+@keyframes showIntro {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
