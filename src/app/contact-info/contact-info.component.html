@@ -1,5 +1,5 @@
 <div class="contactInfo">
-  <a class="btn" *ngFor="let info of contactInfo"  [href]="info.contactUrl" target="_blank">
+  <a class="btn" *ngFor="let info of contactInfo"  [href]="info.contactUrl" [target]="info.target" [attr.download]="info.contactType === 'Resume'?'resume':null">
     <span class="icon" [ngClass]="info.iconType" [ngStyle]="{ 'background': 'url(' + info.iconImg + ') no-repeat'}"></span>
     <span class="iconText">{{info.contactType}}</span>
   </a>
