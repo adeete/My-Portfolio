@@ -37,7 +37,7 @@ export class ContactInfoComponent implements OnInit {
         iconImg: '../../assets/img/down-arrow.png',
         contactType: 'Resume',
         target: '_self',
-        contactUrl: "https://drive.google.com/uc?export=download&id=16rh_hhLu--IgxHqPiiQJHV9slqwm7ev3",
+        contactUrl: "https://drive.google.com/uc?export=download&id=1mKHKjlkxw0jnPPUOQDikVkYNf5shmwnt",
       }
     ];
   }

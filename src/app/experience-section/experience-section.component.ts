@@ -33,6 +33,28 @@ import { BadgeComponent } from '../badge/badge.component';
 export class ExperienceSectionComponent implements OnInit {
   aExperiences = [
     {
+      companyName: 'peoplehum (Coviam)',
+      designation: 'software engineer',
+      from: 'Jan, 2021',
+      to: 'Present',
+      responsibilites: [
+        'Developed a generic resuable accordian list component capable of being extended for any use-case.',
+        'UI Bug Fixes.',
+        'Solved issue of sharing data between two subdomains.',
+        'Developed UI components for Shift workflow',
+      ],
+      technologies: [
+        'Angular',
+        'Javascript',
+        'Typescript',
+        'Python',
+        'CSS',
+        'SASS',
+        'HTML',
+        'Git',
+      ],
+    },
+    {
       companyName: 'robert bosch engineering and business solutions',
       designation: 'software engineer',
       from: 'Aug, 2018',
@@ -93,7 +115,6 @@ export class ExperienceSectionComponent implements OnInit {
   ngOnInit(): void {}
 
   prev() {
-    console.log('next');
     const len = this.aExperiences.length,
       mainSection = document.querySelector('.experience-section');
     this.current = this.current == 0 ? len - 1 : this.current - 1;
@@ -102,7 +123,6 @@ export class ExperienceSectionComponent implements OnInit {
   }
 
   next() {
-    console.log('next');
     const len = this.aExperiences.length;
     this.current = (this.current + 1) % len;
     this.currentState = this.currentState === 'initial' ? 'final' : 'initial';
