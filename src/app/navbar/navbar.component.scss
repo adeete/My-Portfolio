@@ -7,6 +7,7 @@
   align-items: center;
   position: absolute;
   z-index: 11;
+  backface-visibility: hidden;
 
   .navbar {
     display: flex;
