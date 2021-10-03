@@ -9,29 +9,34 @@ import { Component, OnInit } from '@angular/core';
 import { BadgeComponent } from '../badge/badge.component';
 @Component({
   selector: 'app-experience-section',
-  // animations: [
-  //   trigger('slideInOut', [
-  //     state(
-  //       'initial',
-  //       style({
-  //         opacity: 0,
-  //         transform: 'translateX(20%) rotateY(45deg)',
-  //         'transform-origin': 'right',
-  //       })
-  //     ),
-  //     transition(':enter', [
-  //     style({
-  //       opacity : 1,
-  //       transform: 'translateX(0) rotateY(0)',
-  //     }),
-  //     animate('0.5s ease-in-out')])
-  //   ]),
-  // ],
   templateUrl: './experience-section.component.html',
   styleUrls: ['./experience-section.component.scss'],
 })
 export class ExperienceSectionComponent implements OnInit {
   aExperiences = [
+    {
+      companyName: 'zeotap',
+      designation: 'software engineer',
+      from: 'July, 2021',
+      to: 'Present',
+      responsibilites: [
+        'Developed a custom multi-step dropdown component',
+        'UI Bug Fixes.',
+        'Assisted UI team in development of multiple features',
+      ],
+      technologies: [
+        'Angular',
+        'Javascript',
+        'Typescript',
+        'RXJS',
+        'Functional Programming',
+        'Storybook',
+        'CSS',
+        'SASS',
+        'HTML',
+        'Git',
+      ],
+    },
     {
       companyName: 'peoplehum (Coviam)',
       designation: 'software engineer',
@@ -106,7 +111,7 @@ export class ExperienceSectionComponent implements OnInit {
         'python',
         'flask',
       ],
-    }
+    },
   ];
   current = 0;
   currentState = 'initial';
